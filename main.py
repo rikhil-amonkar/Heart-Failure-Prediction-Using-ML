@@ -3,6 +3,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from flask import Flask
 
 heart_data = pd.read_csv("/Users/rikhilamacpro/Downloads/heart.csv")
 
@@ -43,3 +44,29 @@ predict_failure = heart_disease_model.predict(X_test)
 accuracy = accuracy_score(y_test, predict_failure)
 accuracy_percentage = round(accuracy, 2) * 100
 print("This Heart Disease Predictor Model's Accuracy: %" + str(accuracy_percentage))
+
+test_patients = [
+    {'Age': 52, 'Sex': 1, 'ChestPainType': 0, 'RestingBP': 140, 'Cholesterol': 250, 'FastingBS': 0, 'RestingECG': 1, 'MaxHR': 160, 'ExerciseAngina': 0, 'Oldpeak': 0.5, 'ST_Slope': 1},
+    {'Age': 45, 'Sex': 0, 'ChestPainType': 2, 'RestingBP': 130, 'Cholesterol': 230, 'FastingBS': 0, 'RestingECG': 2, 'MaxHR': 150, 'ExerciseAngina': 1, 'Oldpeak': 1.2, 'ST_Slope': 2},
+    {'Age': 60, 'Sex': 1, 'ChestPainType': 1, 'RestingBP': 120, 'Cholesterol': 300, 'FastingBS': 1, 'RestingECG': 1, 'MaxHR': 110, 'ExerciseAngina': 1, 'Oldpeak': 2.0, 'ST_Slope': 2},
+    {'Age': 38, 'Sex': 0, 'ChestPainType': 1, 'RestingBP': 128, 'Cholesterol': 180, 'FastingBS': 0, 'RestingECG': 1, 'MaxHR': 170, 'ExerciseAngina': 0, 'Oldpeak': 0.3, 'ST_Slope': 1},
+    {'Age': 49, 'Sex': 0, 'ChestPainType': 2, 'RestingBP': 160, 'Cholesterol': 180, 'FastingBS': 0, 'RestingECG': 1, 'MaxHR': 156, 'ExerciseAngina': 0, 'Oldpeak': 1.0, 'ST_Slope': 1}
+]
+
+for case in test_patients:
+    user_feature_df = pd.DataFrame([case], columns=features)
+    user_feature_scaled = scaler.transform(user_feature_df)
+    probabilities = heart_disease_model.predict_proba(user_feature_scaled)
+    heart_disease_probability = round(probabilities[0][1], 3) * 100
+    print(f"User input: {case}")
+    print(f"The probability of this patient having heart disease is: {heart_disease_probability:.2f}%")
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "test"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
