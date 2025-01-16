@@ -55,18 +55,18 @@ test_patients = [
 
 for case in test_patients:
     user_feature_df = pd.DataFrame([case], columns=features)
-    user_feature_scaled = scaler.transform(user_feature_df)
+    user_feature_scaled = scaler.transform(user_feature_df.values)
     probabilities = heart_disease_model.predict_proba(user_feature_scaled)
     heart_disease_probability = round(probabilities[0][1], 3) * 100
     print(f"User input: {case}")
     print(f"The probability of this patient having heart disease is: {heart_disease_probability:.2f}%")
+    if heart_disease_probability >= 60:
+        print("You shoud immedietely consult with a health proffesional as your chance of heart disease is predicted to be very high.")
+    elif heart_disease_probability > 20 and heart_disease_probability < 60:
+        print("You might need to make some lifestyle changes or possibly consult with a health proffesional as your chance of heart disease higher than normal.")
+    else:
+        print("You are living a very healthy lifestyle. Keep it up! Your chances of heart disease are very low.")
 
-app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    return "test"
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
