@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(187, 41, 41)
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-top: -40px;
+}
+
+h4 {
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.user-selections {
+    background-color: rgb(167, 6, 6);
+    color: azure;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.headers {
+    color: azure;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace
+}
+
