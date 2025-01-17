@@ -4,57 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<link rel="stylesheet" href="styles.css">
 <body>
-    <h1>PulsePath</h1>
-    <h2>The Heart Disease Predictor</h2>
-    <h4>Enter your information below and check your heart health!</h4>
-    <container class="input-information">
-        <p class="headers">Age</p>
-        <input class="user-selections" type="number">
-        <p class="headers">Sex</p>
-        <select class="user-selections" multiple="select">
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-        </select>
-        <p class="headers">Chest Pain Type</p>
-        <select class="user-selections" multiple="select">
-            <option>TA: Typical Angina</option>
-            <option>ATA: Atypical Angina</option>
-            <option>NAP: Non-Anginal Pain</option>
-            <option>ASY: Asymptomatic</option>
-        </select>
-        <p class="headers">Resting Blood Pressure</p>
-        <input class="user-selections" type="number">
-        <p class="headers">Cholesterol</p>
-        <input class="user-selections" type="number">
-        <p class="headers">Fasting Blood Sugar</p>
-        <select class="user-selections" multiple="select">
-            <option>> 120</option>
-            <option>< 120</option>
-        </select>
-        <p class="headers">Resting Electrocardiogram (ECG)</p>
-        <select class="user-selections" multiple="select">
-            <option>Normal</option>
-            <option>ST</option>
-            <option>LVH</option>
-        </select>
-        <p class="headers">Max Heart Rate</p>
-        <input class="user-selections" type="number">
-        <p class="headers">Excercise-Induced Angina</p>
-        <select class="user-selections" multiple="select">
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-        <p class="headers">Old Peak ST</p>
-        <input class="user-selections" type="number">
-        <p class="headers">ST Slope</p>
-        <select class="user-selections" multiple="select">
-            <option>Upsloping</option>
-            <option>Flat</option>
-            <option>Downsloping</option>        
-    </container>
+    <div class="webpage">
+        <h1>PulsePath</h1>
+        <h2>The Heart Disease Predictor</h2>
+        <h4>Enter your information below and check your heart health!</h4>
+        <form class="input-information">
+            <label for="age" class="headers">Age</label>
+            <input id="age" class="user-selections" type="number" placeholder="Enter your age">
+
+            <label for="sex" class="headers">Sex</label>
+            <select id="sex" class="user-selections">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="chest-pain" class="headers">Chest Pain Type</label>
+            <select id="chest-pain" class="user-selections">
+                <option value="TA">TA: Typical Angina</option>
+                <option value="ATA">ATA: Atypical Angina</option>
+                <option value="NAP">NAP: Non-Anginal Pain</option>
+                <option value="ASY">ASY: Asymptomatic</option>
+            </select>
+
+            <label for="resting-bp" class="headers">Resting Blood Pressure</label>
+            <input id="resting-bp" class="user-selections" type="number" placeholder="Enter value in mmHg">
+
+            <label for="cholesterol" class="headers">Cholesterol</label>
+            <input id="cholesterol" class="user-selections" type="number" placeholder="Enter value in mg/dL">
+
+            <label for="fasting-blood-sugar" class="headers">Fasting Blood Sugar</label>
+            <select id="fasting-blood-sugar" class="user-selections">
+                <option value="greater">Greater than 120</option>
+                <option value="less">Less than 120</option>
+            </select>
+
+            <label for="ecg" class="headers">Resting Electrocardiogram (ECG)</label>
+            <select id="ecg" class="user-selections">
+                <option value="normal">Normal</option>
+                <option value="st">ST</option>
+                <option value="lvh">LVH</option>
+            </select>
+
+            <label for="max-heart-rate" class="headers">Max Heart Rate</label>
+            <input id="max-heart-rate" class="user-selections" type="number" placeholder="Enter value in bpm">
+
+            <label for="exercise-angina" class="headers">Exercise-Induced Angina</label>
+            <select id="exercise-angina" class="user-selections">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="old-peak" class="headers">Old Peak ST</label>
+            <input id="old-peak" class="user-selections" type="number" placeholder="Enter value">
+
+            <label for="st-slope" class="headers">ST Slope</label>
+            <select id="st-slope" class="user-selections">
+                <option value="upsloping">Upsloping</option>
+                <option value="flat">Flat</option>
+                <option value="downsloping">Downsloping</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
