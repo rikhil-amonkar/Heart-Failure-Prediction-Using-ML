@@ -1,36 +1,86 @@
-body {
-    background-color: rgb(187, 41, 41)
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.webpage {
+    border: none;
+    justify-content: center;
+    background-color: #932424;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 50px;
-    margin-top: 20px;
+    font-size: 90px;
+    color: rgb(255, 155, 54);
+    text-align: center;
+    margin: 0;
+    padding-top: 30px;
 }
 
 h2 {
-    font-size: 25px;
-    margin-top: -40px;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    margin-top: -12px;
+    padding-top: 0px;
 }
 
 h4 {
     font-size: 15px;
-    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.user-selections {
-    background-color: rgb(167, 6, 6);
-    color: azure;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.input-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #932424;
+    border: none;
 }
 
 .headers {
-    color: azure;
+    font-size: 25px;
+    color: rgb(255, 173, 90);
     font-weight: bold;
-    font-family:'Courier New', Courier, monospace
+    margin: 10px 0;
 }
 
+.user-selections {
+    background-color: rgb(95, 21, 21);
+    color: azure;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: rgb(255, 155, 54);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+button:hover {
+    background-color: hsl(31, 100%, 72%);
+}
+
+button:active {
+    background-color: hsl(34, 100%, 88%);
+}
