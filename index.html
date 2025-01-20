@@ -4,72 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease Predictor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="webpage">
         <h1>PulsePath</h1>
         <h2>The Heart Disease Predictor</h2>
         <h4>Enter your information below and check your heart health!</h4>
-        <form class="input-information">
+        <form id="input-information">
             <label for="age" class="headers">Age</label>
-            <input id="age" class="user-selections" type="number" placeholder="Enter your age">
+            <p></p>
+            <input id="age" class="user-selections" type="number" max="100" min="1" placeholder="Enter your age">
+
+            <p></p>
 
             <label for="sex" class="headers">Sex</label>
+            <p></p>
             <select id="sex" class="user-selections">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select>
 
+            <p></p>
+
             <label for="chest-pain" class="headers">Chest Pain Type</label>
+            <p></p>
             <select id="chest-pain" class="user-selections">
                 <option value="TA">TA: Typical Angina</option>
                 <option value="ATA">ATA: Atypical Angina</option>
                 <option value="NAP">NAP: Non-Anginal Pain</option>
-                <option value="ASY">ASY: Asymptomatic</option>
+                <option value="ASY">ASY: Asymptomatic (No Pain)</option>
             </select>
 
+            <p></p>
+
             <label for="resting-bp" class="headers">Resting Blood Pressure</label>
+            <p></p>
             <input id="resting-bp" class="user-selections" type="number" placeholder="Enter value in mmHg">
 
+            <p></p>
+
             <label for="cholesterol" class="headers">Cholesterol</label>
+            <p></p>
             <input id="cholesterol" class="user-selections" type="number" placeholder="Enter value in mg/dL">
 
+            <p></p>
+
             <label for="fasting-blood-sugar" class="headers">Fasting Blood Sugar</label>
+            <p></p>
             <select id="fasting-blood-sugar" class="user-selections">
                 <option value="greater">Greater than 120</option>
                 <option value="less">Less than 120</option>
             </select>
 
+            <p></p>
+
             <label for="ecg" class="headers">Resting Electrocardiogram (ECG)</label>
+            <p></p>
             <select id="ecg" class="user-selections">
                 <option value="normal">Normal</option>
-                <option value="st">ST</option>
-                <option value="lvh">LVH</option>
+                <option value="st">ST: ST segment</option>
+                <option value="lvh">LVH: Left Ventricular Hypertrophy</option>
             </select>
 
+            <p></p>
+
             <label for="max-heart-rate" class="headers">Max Heart Rate</label>
+            <p></p>
             <input id="max-heart-rate" class="user-selections" type="number" placeholder="Enter value in bpm">
 
+            <p></p>
+
             <label for="exercise-angina" class="headers">Exercise-Induced Angina</label>
+            <p></p>
             <select id="exercise-angina" class="user-selections">
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
 
+            <p></p>
+
             <label for="old-peak" class="headers">Old Peak ST</label>
+            <p></p>
             <input id="old-peak" class="user-selections" type="number" placeholder="Enter value">
 
+            <p></p>
+
             <label for="st-slope" class="headers">ST Slope</label>
+            <p></p>
             <select id="st-slope" class="user-selections">
                 <option value="upsloping">Upsloping</option>
                 <option value="flat">Flat</option>
                 <option value="downsloping">Downsloping</option>
             </select>
 
+            <p></p>
+
             <button type="submit">Submit</button>
+
         </form>
     </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
