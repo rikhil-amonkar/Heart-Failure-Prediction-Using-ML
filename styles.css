@@ -2,9 +2,11 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #932424;
+    height: 100%;
 }
 
-.webpage {
+.webpage, .result-container {
     border: none;
     justify-content: center;
     background-color: #932424;
@@ -37,19 +39,25 @@ h4 {
     margin-bottom: 20px;
 }
 
-.input-information {
+#input-information {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;      /* Centers form elements horizontally */
+    justify-content: center;  /* Centers form elements vertically */
     background-color: #932424;
-    border: none;
+    width: 100%;
+    max-width: 500px;         /* Limit form width */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;           /* Center the form itself */
 }
 
+/* Label Styles */
 .headers {
     font-size: 25px;
     color: rgb(255, 173, 90);
     font-weight: bold;
-    margin: 10px 0;
+    margin-top: 5px;
 }
 
 .user-selections {
@@ -62,10 +70,11 @@ h4 {
     font-size: 16px;
     width: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    margin-bottom: -5px;
 }
 
 button {
+    font-weight: bold;
     background-color: rgb(255, 155, 54);
     color: #ffffff;
     border: none;
@@ -75,6 +84,8 @@ button {
     cursor: pointer;
     margin-top: 40px;
     margin-bottom: 80px;
+    width: 100%;
+    max-width: 300px; 
 }
 
 button:hover {
@@ -83,4 +94,61 @@ button:hover {
 
 button:active {
     background-color: hsl(34, 100%, 88%);
+}
+
+/* Result Container Styling */
+.result-container {
+    background-color: #932424;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.result-container h2 {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.result-container p {
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
+}
+
+.result-container button {
+    font-weight: bold;
+    background-color: rgb(255, 155, 54);
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+.result-container button:hover {
+    background-color: hsl(31, 100%, 72%);
+}
+
+.result-container button:active {
+    background-color: hsl(34, 100%, 88%);
+}
+
+/* Hide result div until form submission */
+#result {
+    display: flex;  /* Initially hide the result div */
+    margin-top: 20px; 
+    margin-right: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+}
+
+.result-webpage {
+    background-color: rgb(95, 21, 21)
 }
