@@ -28,5 +28,6 @@ document.getElementById("input-information").addEventListener("submit", function
         .then(result => {
             document.body.innerHTML = result; // Replace page content with result
         })
+        
         .catch(error => console.error("Error:", error));
 });
