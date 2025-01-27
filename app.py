@@ -91,6 +91,10 @@ print("This Heart Disease Predictor Model's Accuracy: %" + str(accuracy_percenta
 def index():
     return render_template('index.html')
 
+@app.route('/info')
+def info():
+    return render_template('information.html')
+
 @app.route('/predict', methods=['POST'])
 def predict_heart_disease():
     data = request.get_json()  # Ensure JSON input
@@ -158,4 +162,3 @@ def predict_heart_disease():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
